@@ -1,0 +1,18 @@
+#!/bin/bash
+# Save this script as "read_array.sh"
+
+echo "Enter a list of names (type 'done' to finish):"
+names=()
+while true; do
+    read -p "> " name
+    if [[ $name == "done" ]]; then
+        break
+    fi
+    names+=("$name")
+done
+
+echo "Names entered:"
+for name in "${names[@]}"; do
+    echo "- $name"
+done
+
